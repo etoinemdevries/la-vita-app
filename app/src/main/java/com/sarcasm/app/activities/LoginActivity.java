@@ -1,4 +1,4 @@
-package com.sarcasm.app;
+package com.sarcasm.app.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,6 +28,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.sarcasm.app.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
