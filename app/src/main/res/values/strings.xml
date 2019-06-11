@@ -1,10 +1,20 @@
 <resources>
     <string name="app_name">Login Scherm</string>
     <string name="title_activity_main_menu">Hoofdmenu</string>
-    
+
     <!-- Strings related to login -->
     <string name="password">Wachtwoord</string>
     <string name="action_sign_in">Log in</string>
     <string name="logo">Bedrijf Logo</string>
     <string name="error_incorrect_password">Verkeerd wachtwoord, probeer opnieuw</string>
+
+    <!-- Main menu -->
+    <string name="imgCat">Product categorie</string>
+    <string name="cat1">Pizza's</string>
+    <string name="cat2">Pasta</string>
+    <string name="cat3">Salades</string>
+    <string name="cat4">Desserts</string>
+    <string name="cat5">Frisdranken</string>
+    <string name="cat6">Alcohol</string>
+    <string name="cat7">Warme dranken</string>
 
