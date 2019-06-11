@@ -361,7 +361,7 @@
       <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" sideWeight="0.499375" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.500625" side_tool="true" visible="true" weight="0.018300654" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.500625" side_tool="true" weight="0.018300654" />
       <window_info anchor="bottom" id="Build" sideWeight="0.499375" weight="0.018300654" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
