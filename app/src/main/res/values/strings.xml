@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Login Scherm</string>
+    <string name="title_activity_main_menu">Hoofdmenu</string>
+    
     <!-- Strings related to login -->
     <string name="password">Wachtwoord</string>
     <string name="action_sign_in">Log in</string>
     <string name="logo">Bedrijf Logo</string>
     <string name="error_incorrect_password">Verkeerd wachtwoord, probeer opnieuw</string>
+
