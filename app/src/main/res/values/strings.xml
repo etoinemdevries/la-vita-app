@@ -8,11 +8,10 @@
     <string name="action_sign_in">Log in</string>
     <string name="logo">Bedrijf Logo</string>
     <string name="error_incorrect_password">Verkeerd wachtwoord, probeer opnieuw</string>
-</resources>
 
     <!-- Main menu -->
     <string name="imgCat">Product categorie</string>
-    <string name="cat1">Pizza's</string>
+    <string name="cat1">Pizza\'s</string>
     <string name="cat2">Pasta</string>
     <string name="cat3">Salades</string>
     <string name="cat4">Desserts</string>
