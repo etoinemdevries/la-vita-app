@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#123456"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GridActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/GridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="107dp">
+
+            <ImageView
+                android:id="@+id/imgCat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                tools:srcCompat="@tools:sample/avatars[4]" />
+
+            <ImageView
+                android:id="@+id/imgCat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                app:layout_column="1"
+                app:layout_row="0"
+                tools:srcCompat="@tools:sample/avatars[0]" />
+
+            <ImageView
+                android:id="@+id/imgCat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                app:layout_column="2"
+                app:layout_row="0"
+                tools:srcCompat="@tools:sample/avatars[11]" />
+
+            <TextView
+                android:id="@+id/txtCat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat1"
+                android:textColor="#ffffff"
+                app:layout_column="0"
+                app:layout_row="1"
+                tools:text="@string/cat1" />
+
+            <TextView
+                android:id="@+id/txtCat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat2"
+                android:textColor="#ffffff"
+                app:layout_column="1"
+                app:layout_row="1"
+                tools:text="@string/cat2" />
+
+            <TextView
+                android:id="@+id/txtCat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat3"
+                android:textColor="#ffffff"
+                app:layout_column="2"
+                app:layout_row="1"
+                tools:text="@string/cat3" />
+
+            <ImageView
+                android:id="@+id/imgCat4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                app:layout_column="0"
+                app:layout_row="2"
+                tools:srcCompat="@tools:sample/avatars[2]" />
+
+            <ImageView
+                android:id="@+id/imgCat5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                app:layout_column="1"
+                app:layout_row="2"
+                tools:srcCompat="@tools:sample/avatars[5]" />
+
+            <ImageView
+                android:id="@+id/imgCat6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                app:layout_column="2"
+                app:layout_row="2"
+                tools:srcCompat="@tools:sample/avatars[8]" />
+
+            <TextView
+                android:id="@+id/txtCat4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat4"
+                android:textColor="#ffffff"
+                app:layout_column="0"
+                app:layout_row="3"
+                tools:text="@string/cat4" />
+
+            <TextView
+                android:id="@+id/txtCat5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat5"
+                android:textColor="#ffffff"
+                app:layout_column="1"
+                app:layout_row="3"
+                tools:text="@string/cat5" />
+
+            <TextView
+                android:id="@+id/txtCat6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat6"
+                android:textColor="#ffffff"
+                app:layout_column="2"
+                app:layout_row="3"
+                tools:text="@string/cat6" />
+
+            <ImageView
+                android:id="@+id/imgCat7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imgCat"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                app:layout_column="0"
+                app:layout_row="4"
+                tools:srcCompat="@tools:sample/avatars[9]" />
+
+            <TextView
+                android:id="@+id/txtCat7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="@string/cat7"
+                android:textColor="#ffffff"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+        </android.support.v7.widget.GridLayout>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
