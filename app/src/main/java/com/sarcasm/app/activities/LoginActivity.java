@@ -7,12 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sarcasm.app.R;
 
 public final class LoginActivity extends AppCompatActivity implements OnClickListener {
     private TextView password;
+    private ImageView logo;
     private Button login;
 
     @Override
@@ -25,6 +27,9 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
         this.password = findViewById(R.id.etPassword);
         this.login = findViewById(R.id.btnLogin);
         this.login.setOnClickListener(this);
+
+        this.logo = findViewById(R.id.imgLogo);
+        this.logo.setImageResource(R.drawable.snow);
     }
 
     @Override
