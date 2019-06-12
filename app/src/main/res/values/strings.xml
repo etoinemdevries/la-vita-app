@@ -1,4 +1,5 @@
 <resources>
+    <!-- Generic application strings -->
     <string name="app_name">La Vita E Bella</string>
     <string name="title_activity_main">Hoofdmenu</string>
     <string name="title_activity_login">Login Scherm</string>
