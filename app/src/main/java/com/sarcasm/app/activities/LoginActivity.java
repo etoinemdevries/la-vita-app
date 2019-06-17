@@ -1,5 +1,6 @@
 package com.sarcasm.app.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,6 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
         super.onCreate(bundle);
 
         setContentView(R.layout.activity_login);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         this.password = findViewById(R.id.etPassword);
         this.login = findViewById(R.id.btnLogin);
@@ -40,6 +40,7 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
         if (pass.isEmpty()) return;
 
         System.out.printf("Pass: [%s]", pass);
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
 
