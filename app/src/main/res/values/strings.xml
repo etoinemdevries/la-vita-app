@@ -16,7 +16,10 @@
     <string name="cat2">Pasta</string>
     <string name="cat3">Salades</string>
     <string name="cat4">Desserts</string>
-    <string name="cat5">Fris dranken</string>
+    <string name="cat5">Frisdranken</string>
     <string name="cat6">Alcohol</string>
     <string name="cat7">Warme dranken</string>
+    <string name="cat8">Voorgerechten</string>
+    <string name="cat9">Hoofdgerechten</string>
+    <string name="cat10">Nagerechten</string>
 </resources>
