@@ -29,7 +29,7 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
         this.login.setOnClickListener(this);
 
         this.logo = findViewById(R.id.imgLogo);
-        this.logo.setImageResource(R.drawable.snow);
+        this.logo.setImageResource(R.drawable.vita_logo);
     }
 
     @Override
