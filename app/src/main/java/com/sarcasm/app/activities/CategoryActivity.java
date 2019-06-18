@@ -1,7 +1,9 @@
 package com.sarcasm.app.activities;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,6 +30,8 @@ public class CategoryActivity extends AppCompatActivity {
         for (int i = 0; i < products.length; i++) {
             TextView tv = new TextView(this);
             tv.setText(products[i]);
+            tv.setTextColor(Color.parseColor("#009246"));
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
             this.list.addView(tv);
         }
     }
