@@ -21,7 +21,6 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
     @Override
     protected final void onCreate(final @Nullable Bundle bundle) {
         super.onCreate(bundle);
-
         setContentView(R.layout.activity_login);
 
         this.password = findViewById(R.id.etPassword);

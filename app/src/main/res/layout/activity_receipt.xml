@@ -19,7 +19,9 @@
             android:layout_width="130dp"
             android:layout_height="85dp"
             android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/vita_logo" />
+            app:srcCompat="@drawable/vita_logo"
+            android:contentDescription="TODO"
+            android:layout_marginStart="10dp" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

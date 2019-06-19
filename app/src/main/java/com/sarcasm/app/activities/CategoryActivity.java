@@ -14,10 +14,11 @@ import com.sarcasm.app.R;
 
 public class CategoryActivity extends AppCompatActivity {
     private LinearLayout list;
+    private String category;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected final void onCreate(final Bundle bundle) {
+        super.onCreate(bundle);
         setContentView(R.layout.activity_category);
 
         this.list = findViewById(R.id.productList);

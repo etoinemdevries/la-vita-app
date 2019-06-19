@@ -60,7 +60,6 @@
                     android:drawableStart="@drawable/password"
                     android:drawableLeft="@drawable/password"
                     android:ems="10"
-                    android:hint="@string/password"
                     android:inputType="textPassword"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
