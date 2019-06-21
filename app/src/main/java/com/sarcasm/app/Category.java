@@ -2,11 +2,11 @@ package com.sarcasm.app;
 
 /** Product categories */
 public enum Category {
-    Alcohol("Alcohol", -1),
-    Appetizers("Voorgerechten", -1),
-    Dessert("Nagerechten", -1),
-    Drinks("Drinken", -1),
-    MainCourse("Hoofdgerechten", -1);
+    Alcohol("Alcohol", R.drawable.drinks),
+    Appetizers("Voorgerechten", R.drawable.appetizer),
+    Dessert("Nagerechten", R.drawable.desserts),
+    Drinks("Drinken", R.drawable.drinks),
+    MainCourse("Hoofdgerechten", R.drawable.main_course);
 
     /* Category info */
     private final String name;

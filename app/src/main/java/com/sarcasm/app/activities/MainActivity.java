@@ -56,7 +56,7 @@ public final class MainActivity extends AppCompatActivity {
             img.setMinimumHeight(point.y / 6);
             img.setMaxWidth(point.y / 6);
             img.setMaxHeight(point.y / 6);
-            img.setImageResource(R.drawable.ic_launcher_round);
+            img.setImageResource(c.getId());
 
             /* Set text specs */
             text.setTextColor(Color.parseColor("#009246"));
