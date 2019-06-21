@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sarcasm.app.R;
 
@@ -34,11 +35,14 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
     @Override
     public final void onClick(final View v) {
         if (v != this.login || this.login == null || this.password == null) return;
-
         final String pass = this.password.getText().toString();
-        if (pass.isEmpty()) return;
 
-        System.out.printf("Pass: [%s]", pass);
+        if (pass.isEmpty()) {
+            Toast.makeText(this, "Enter password", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // TODO: Add authentication
         startActivity(new Intent(this, MainActivity.class));
     }
 }

@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1e1e20"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="horizontal">
 
         <ImageView
@@ -27,6 +29,7 @@
             android:gravity="center">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/search"
                 android:layout_width="209dp"
                 android:layout_height="28dp"
                 android:background="#ffffff" />
