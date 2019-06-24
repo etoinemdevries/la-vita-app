@@ -43,7 +43,7 @@ public final class LoginActivity extends AppCompatActivity implements OnClickLis
         }
 
         // TODO: Add authentication
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, TableActivity.class));
     }
 }
 

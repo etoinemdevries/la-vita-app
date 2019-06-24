@@ -12,8 +12,7 @@
             <!-- setting the thickness of shadow (positive value will give shadow on that side) -->
 
             <padding
-                android:bottom="2dp"
-                android:top="2dp" />
+                android:bottom="2dp" />
         </shape>
     </item>
 
@@ -24,3 +23,4 @@
             <solid android:color="#fff" />
         </shape>
     </item>
+</layer-list>
