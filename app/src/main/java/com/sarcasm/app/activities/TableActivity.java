@@ -45,4 +45,5 @@ public class TableActivity extends AppCompatActivity {
             this.list.addView(layout);
         }
     }
+
 }
