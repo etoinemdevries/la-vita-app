@@ -9,6 +9,7 @@ import android.text.InputType;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.sarcasm.app.Category;
 import com.sarcasm.app.R;
+import com.sarcasm.app.Receipt;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -84,13 +86,13 @@ public class CategoryActivity extends AppCompatActivity {
         /* Add everything to layouts */
         layout.addView(img);
         layout.addView(text);
-        //addButtons(layout, value, 0);
+        addButtons(layout, p, value, 0);
 
         this.list.addView(layout);
     }
 
     /** Adds buttons to linear layout */
-    private final void addButtons(final LinearLayout layout, int value, final int amount){
+    private final void addButtons(final LinearLayout layout, final Category.Product p, int value, final int amount){
         final LinearLayout actionBar = new LinearLayout(this);
         final ImageView plus = new ImageView(this);
         final ImageView minus = new ImageView(this);
@@ -115,55 +117,31 @@ public class CategoryActivity extends AppCompatActivity {
         text.setText(Integer.toString(amount));
         text.setInputType(InputType.TYPE_CLASS_NUMBER);
 
+        /* Onclicklisteners */
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public final void onClick(final View v) {
+                MainActivity.receipt.removeProduct(p);
+                System.out.println("HALLO MINUS: " + MainActivity.receipt.getProducts());
+            }
+        });
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public final void onClick(final View v) {
+                MainActivity.receipt.addProduct(p);
+                System.out.println("HALLO PLUS: " + MainActivity.receipt.getProducts());
+            }
+        });
+
         /* Add buttons and amount to action bar */
         actionBar.setGravity(Gravity.CENTER_VERTICAL);
+        actionBar.setOrientation(LinearLayout.HORIZONTAL);
         actionBar.addView(minus);
         actionBar.addView(text);
         actionBar.addView(plus);
 
         /* Add the action bar to layout */
         layout.addView(actionBar);
-    }
-
-    private void addLayout() {
-        final LinearLayout product = new LinearLayout(this);
-        final TextView productInfo = new TextView(this);
-
-        final LinearLayout actionBar = new LinearLayout(this);
-        final ImageView minus = new ImageView(this);
-        final ImageView plus = new ImageView(this);
-        final TextView amount = new TextView(this);
-
-        /* Product info LinearLayout specs */
-        product.setOrientation(LinearLayout.HORIZONTAL);
-
-        /* Product name + price string */
-        productInfo.setText("Name" + "Price");
-        productInfo.setTextColor(Color.parseColor("#009246"));
-        productInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
-
-        /* Actionbar LinearLayout */
-        actionBar.setGravity(Gravity.END);
-
-        /* Minus image specs */
-        minus.setImageResource(R.drawable.presence_busy);
-
-        /* Plus image specs */
-        plus.setImageResource(R.drawable.ic_input_add);
-
-        /* Amount textview specs */
-        amount.setInputType(InputType.TYPE_CLASS_NUMBER);
-
-
-        /* Add stuff to eachother */
-
-        actionBar.addView(minus);
-        actionBar.addView(amount);
-        actionBar.addView(plus);
-
-        product.addView(productInfo);
-        product.addView(actionBar);
-
-        this.list.addView(product);
     }
 }

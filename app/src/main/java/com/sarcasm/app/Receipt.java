@@ -6,12 +6,16 @@ public class Receipt {
     private final ArrayList<Category.Product> products = new ArrayList<>();
     private final int tableNumber;
 
-    public Receipt(int table) {
+    public Receipt(final int table) {
         this.tableNumber = table;
     }
 
     public void addProduct(final Category.Product product) {
         this.products.add(product);
+    }
+
+    public boolean removeProduct(final Category.Product product) {
+        return !this.products.isEmpty() && this.products.remove(product);
     }
 
     public double getTotalPrice() {
