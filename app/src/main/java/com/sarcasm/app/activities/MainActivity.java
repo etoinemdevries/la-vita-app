@@ -22,12 +22,17 @@ import com.sarcasm.app.Receipt;
 public final class MainActivity extends AppCompatActivity {
     public static Receipt receipt;
     private LinearLayout list;
+    private ImageView logo;
 
     @Override
     protected final void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
         this.list = findViewById(R.id.categories);
+        this.logo = findViewById(R.id.imgLogo);
+
+        /* Onclicklistener for logo (temporary) */
+        goToReceipt();
 
         /* Checks for table number */
         final int result = getIntent().getIntExtra("table", -1);
@@ -88,5 +93,15 @@ public final class MainActivity extends AppCompatActivity {
         layout.addView(img);
         layout.addView(text);
         this.list.addView(layout);
+    }
+
+    private final void goToReceipt() {
+        this.logo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                final Intent intent = new Intent(MainActivity.this, ReceiptActivity.class);
+                startActivityForResult(intent, RESULT_OK);
+            }
+        });
     }
 }
