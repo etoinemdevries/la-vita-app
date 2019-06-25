@@ -16,6 +16,8 @@ import com.sarcasm.app.Category;
 import com.sarcasm.app.R;
 import com.sarcasm.app.Receipt;
 
+import java.io.Serializable;
+
 public class TableActivity extends AppCompatActivity {
     private LinearLayout list;
 
@@ -55,8 +57,8 @@ public class TableActivity extends AppCompatActivity {
             layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public final void onClick(final View v) {
-                    final Receipt receipt = new Receipt(j);
                     final Intent intent = new Intent(TableActivity.this, MainActivity.class);
+                    intent.putExtra("table", j);
 
                     startActivityForResult(intent, RESULT_OK);
                 }

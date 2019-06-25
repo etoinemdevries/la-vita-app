@@ -3,7 +3,7 @@ package com.sarcasm.app;
 import java.util.ArrayList;
 
 public class Receipt {
-    public static final ArrayList<Category.Product> products = new ArrayList<>();
+    private final ArrayList<Category.Product> products = new ArrayList<>();
     private final int tableNumber;
 
     public Receipt(int table) {
@@ -25,6 +25,10 @@ public class Receipt {
 
     public int getTableNumber() {
         return this.tableNumber;
+    }
+
+    public ArrayList<Category.Product> getProducts() {
+        return this.products;
     }
 
 }
