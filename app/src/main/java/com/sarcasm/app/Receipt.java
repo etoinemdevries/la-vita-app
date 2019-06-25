@@ -3,8 +3,8 @@ package com.sarcasm.app;
 import java.util.ArrayList;
 
 public class Receipt {
+    public static final ArrayList<Category.Product> products = new ArrayList<>();
     private final int tableNumber;
-    private final ArrayList<Category.Product> products = new ArrayList<>();
 
     public Receipt(int table) {
         this.tableNumber = table;
@@ -16,10 +16,15 @@ public class Receipt {
 
     public double getTotalPrice() {
         double price = 0;
-        
+
         for (final Category.Product p : this.products)
             price += p.getPrice();
 
         return price;
     }
+
+    public int getTableNumber() {
+        return this.tableNumber;
+    }
+
 }
