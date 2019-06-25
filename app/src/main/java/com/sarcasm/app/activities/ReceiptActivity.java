@@ -71,7 +71,9 @@ public class ReceiptActivity extends AppCompatActivity {
         /* Set text specs */
         text.setTextColor(Color.parseColor("#009246"));
         text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
-        text.setText(p.getName());
+
+        if(count > 1) text.setText(p.getName() + " (x" + count + ")");
+        else text.setText(p.getName());
 
         text.setGravity(Gravity.CENTER_VERTICAL);
         text.setX(value / 2);
@@ -97,8 +99,10 @@ public class ReceiptActivity extends AppCompatActivity {
         if(decimal > 0) {
             string.append(',');
             string.append(Math.round(decimal * 100));
+            return string.toString();
         }
 
+        string.append(",-");
         return string.toString();
     }
 }

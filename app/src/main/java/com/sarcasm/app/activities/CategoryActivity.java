@@ -130,7 +130,6 @@ public final class CategoryActivity extends AppCompatActivity {
             public final void onClick(final View v) {
                 receipt.removeProduct(p);
                 text.setText(Integer.toString(receipt.getAmount(p)));
-                System.out.println("HALLO MINUS: " + MainActivity.receipt.getProducts());
             }
         });
 
@@ -140,13 +139,12 @@ public final class CategoryActivity extends AppCompatActivity {
             public final void onClick(final View v) {
                 MainActivity.receipt.addProduct(p);
                 text.setText(Integer.toString(receipt.getAmount(p)));
-                System.out.println("HALLO PLUS: " + MainActivity.receipt.getProducts());
             }
         });
 
         /* Add buttons and amount to action bar */
         actionBar.setGravity(Gravity.CENTER_VERTICAL);
-        actionBar.setOrientation(LinearLayout.HORIZONTAL);
+        actionBar.setOrientation(LinearLayout.VERTICAL);
         actionBar.addView(minus);
         actionBar.addView(text);
         actionBar.addView(plus);
