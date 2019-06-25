@@ -2,7 +2,7 @@ package com.sarcasm.app;
 
 import java.util.ArrayList;
 
-public class Receipt {
+public final class Receipt {
     private final ArrayList<Category.Product> products = new ArrayList<>();
     private final int tableNumber;
 
@@ -10,15 +10,15 @@ public class Receipt {
         this.tableNumber = table;
     }
 
-    public void addProduct(final Category.Product product) {
+    public final void addProduct(final Category.Product product) {
         this.products.add(product);
     }
 
-    public boolean removeProduct(final Category.Product product) {
+    public final boolean removeProduct(final Category.Product product) {
         return !this.products.isEmpty() && this.products.remove(product);
     }
 
-    public double getTotalPrice() {
+    public final double getTotalPrice() {
         double price = 0;
 
         for (final Category.Product p : this.products)
@@ -27,11 +27,20 @@ public class Receipt {
         return price;
     }
 
-    public int getTableNumber() {
+    public final int getAmount(final Category.Product p) {
+        int count = 0;
+
+        for (final Category.Product product : this.products)
+            if (p.getName() == product.getName()) count++;
+
+        return count;
+    }
+
+    public final int getTableNumber() {
         return this.tableNumber;
     }
 
-    public ArrayList<Category.Product> getProducts() {
+    public final ArrayList<Category.Product> getProducts() {
         return this.products;
     }
 

@@ -24,7 +24,7 @@ import com.sarcasm.app.Receipt;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CategoryActivity extends AppCompatActivity {
+public final class CategoryActivity extends AppCompatActivity {
     private LinearLayout list;
 
     @Override
@@ -55,9 +55,10 @@ public class CategoryActivity extends AppCompatActivity {
             addProduct(p, point.x, point.y);
     }
 
+    /** Adds a product to the interface */
     private final void addProduct(final Category.Product p, final int width, int value){
         final LinearLayout layout = new LinearLayout(this);
-        final ImageView img = new ImageView(this);
+        final TextView price = new TextView(this);
         final TextView text = new TextView(this);
         value /= 6;
 
@@ -66,12 +67,17 @@ public class CategoryActivity extends AppCompatActivity {
         layout.setMinimumWidth(width);
         layout.setMinimumHeight(value);
 
-        /* Set image specs */
-        img.setMinimumWidth(value);
-        img.setMinimumHeight(value);
-        img.setMaxWidth(value);
-        img.setMaxHeight(value);
-        img.setImageResource(R.drawable.ic_launcher_round);
+        /* Set price specs */
+        final String amount = getPrice(p);
+
+        price.setText(amount);
+        price.setTextColor(Color.parseColor("#009246"));
+        price.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
+
+        price.setGravity(Gravity.CENTER_VERTICAL);
+        price.setX(5);
+        price.setWidth(value);
+        price.setHeight(value);
 
         /* Set text specs */
         text.setTextColor(Color.parseColor("#009246"));
@@ -84,19 +90,20 @@ public class CategoryActivity extends AppCompatActivity {
         text.setHeight(value);
 
         /* Add everything to layouts */
-        layout.addView(img);
+        layout.addView(price);
         layout.addView(text);
-        addButtons(layout, p, value, 0);
 
+        addButtons(layout, p, value);
         this.list.addView(layout);
     }
 
     /** Adds buttons to linear layout */
-    private final void addButtons(final LinearLayout layout, final Category.Product p, int value, final int amount){
+    private final void addButtons(final LinearLayout layout, final Category.Product p, int value){
         final LinearLayout actionBar = new LinearLayout(this);
         final ImageView plus = new ImageView(this);
         final ImageView minus = new ImageView(this);
         final TextView text = new TextView(this);
+        final Receipt receipt = MainActivity.receipt;
         value /= 3;
 
         /* Set plus image specs */
@@ -114,22 +121,25 @@ public class CategoryActivity extends AppCompatActivity {
         minus.setMaxHeight(value);
 
         /* Set amount specs */
-        text.setText(Integer.toString(amount));
+        text.setText(Integer.toString(receipt.getAmount(p)));
         text.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-        /* Onclicklisteners */
+        /* Register listener */
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public final void onClick(final View v) {
-                MainActivity.receipt.removeProduct(p);
+                receipt.removeProduct(p);
+                text.setText(Integer.toString(receipt.getAmount(p)));
                 System.out.println("HALLO MINUS: " + MainActivity.receipt.getProducts());
             }
         });
 
+        /* Register listener */
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public final void onClick(final View v) {
                 MainActivity.receipt.addProduct(p);
+                text.setText(Integer.toString(receipt.getAmount(p)));
                 System.out.println("HALLO PLUS: " + MainActivity.receipt.getProducts());
             }
         });
@@ -143,5 +153,23 @@ public class CategoryActivity extends AppCompatActivity {
 
         /* Add the action bar to layout */
         layout.addView(actionBar);
+    }
+
+    /** Gets the price of a product as a string */
+    public final String getPrice(final Category.Product p){
+        final double normal = p.getPrice();
+        final int rounded = (int)normal;
+        final double decimal = normal - rounded;
+
+        final StringBuilder string = new StringBuilder();
+        string.append('€');
+        string.append(rounded);
+
+        if(decimal > 0) {
+            string.append(',');
+            string.append(Math.round(decimal * 100));
+        }
+
+        return string.toString();
     }
 }
