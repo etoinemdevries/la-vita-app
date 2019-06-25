@@ -84,7 +84,7 @@ public class CategoryActivity extends AppCompatActivity {
         /* Add everything to layouts */
         layout.addView(img);
         layout.addView(text);
-        addButtons(layout, value, 0);
+        //addButtons(layout, value, 0);
 
         this.list.addView(layout);
     }
