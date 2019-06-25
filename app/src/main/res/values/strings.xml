@@ -1,8 +1,12 @@
 <resources>
     <!-- Generic application strings -->
     <string name="app_name">La Vita E Bella</string>
-    <string name="title_activity_main">Hoofdmenu</string>
+    <string name="title_activity_category">Productoverzicht</string>
     <string name="title_activity_login">Login Scherm</string>
+    <string name="title_activity_main">Hoofdmenu</string>
+    <string name="title_activity_receipt">Bonoverzicht</string>
+    <string name="title_activity_table">Tafeloverzicht</string>
+
 
     <!-- Strings related to login -->
     <string name="password">Wachtwoord</string>

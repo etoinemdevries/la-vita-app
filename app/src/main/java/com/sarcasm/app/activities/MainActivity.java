@@ -17,8 +17,10 @@ import android.widget.Toast;
 
 import com.sarcasm.app.Category;
 import com.sarcasm.app.R;
+import com.sarcasm.app.Receipt;
 
 public final class MainActivity extends AppCompatActivity {
+    public static Receipt receipt;
     private LinearLayout list;
 
     @Override
@@ -26,6 +28,14 @@ public final class MainActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
         this.list = findViewById(R.id.categories);
+
+        /* Checks for table number */
+        final int result = getIntent().getIntExtra("table", -1);
+        if (result != -1) {
+            this.receipt = new Receipt(result);
+        }
+
+        System.out.println(receipt.getTableNumber());
 
         /* Get screen width and height */
         final Point point = new Point();
