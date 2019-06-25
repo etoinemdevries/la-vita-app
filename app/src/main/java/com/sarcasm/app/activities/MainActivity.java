@@ -31,11 +31,7 @@ public final class MainActivity extends AppCompatActivity {
 
         /* Checks for table number */
         final int result = getIntent().getIntExtra("table", -1);
-        if (result != -1) {
-            this.receipt = new Receipt(result);
-        }
-
-        System.out.println(receipt.getTableNumber());
+        if (result != -1) this.receipt = new Receipt(result);
 
         /* Get screen width and height */
         final Point point = new Point();
