@@ -1,5 +1,6 @@
 package com.sarcasm.app.activities;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,6 +46,10 @@ public class ReceiptActivity extends AppCompatActivity {
         if(!receipt.getProducts().isEmpty()) {
             addLayout("Totaal", getPrice(receipt.getTotalPrice()), point.x, point.y).setTextColor(Color.BLACK);
         }
+
+        /* Add onclicklisteners for toggling of notition */
+        openNotition();
+        closeNotition();
     }
 
     /** Adds a product to the interface */
@@ -115,5 +122,25 @@ public class ReceiptActivity extends AppCompatActivity {
 
         string.append(",-");
         return string.toString();
+    }
+
+    private final void openNotition() {
+        final Button toggleButton = findViewById(R.id.btnNotition);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public final void onClick(final View v) {
+                toggleButton.setVisibility(Button.GONE);
+                findViewById(R.id.notition).setVisibility(LinearLayout.VISIBLE);
+            }
+        });
+    }
+    private final void closeNotition() {
+        findViewById(R.id.btnCloseNotition).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public final void onClick(final View v) {
+                findViewById(R.id.notition).setVisibility(LinearLayout.GONE);
+                findViewById(R.id.btnNotition).setVisibility(Button.VISIBLE);
+            }
+        });
     }
 }
