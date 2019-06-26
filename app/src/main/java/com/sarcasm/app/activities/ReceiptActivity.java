@@ -1,5 +1,6 @@
 package com.sarcasm.app.activities;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,6 @@ import android.widget.TextView;
 import com.sarcasm.app.Category;
 import com.sarcasm.app.R;
 import com.sarcasm.app.Receipt;
-
-import java.util.ArrayList;
 
 public class ReceiptActivity extends AppCompatActivity {
     private LinearLayout list;
@@ -36,25 +35,29 @@ public class ReceiptActivity extends AppCompatActivity {
             final int count = receipt.getAmount(p);
             if (count <= 0) continue;
 
-            addLayout(p.getName(), getPrice((p.getPrice() * count)), count, point.x, point.y);
+            final String text = p.getName() + (count > 1 ? " (x" + count + ")" : "");
+            addLayout(text, getPrice((p.getPrice() * count)), point.x, point.y);
         }
 
         /* Add total price section */
-        addLayout("Totaal", getPrice(receipt.getTotalPrice()), 0, point.x, point.y);
+        if(!receipt.getProducts().isEmpty()) {
+            addLayout("Totaal", getPrice(receipt.getTotalPrice()), point.x, point.y).setTextColor(Color.BLACK);
+        }
     }
 
     /** Adds a product to the interface */
-    private final void addLayout(final String textString, final String priceString, final int count, final int width, int value){
+    private final TextView addLayout(final String textString, final String priceString, final int width, int value){
         value /= 6;
         final LinearLayout layout = makeLayout(width, value);
         final TextView price = makePrice(priceString, value);
-        final TextView text = makeText(textString, count, value);
+        final TextView text = makeText(textString, value);
 
         /* Add everything to layouts */
         layout.addView(text);
         layout.addView(price);
 
         this.list.addView(layout);
+        return text;
     }
 
     private final LinearLayout makeLayout(final int width, int value) {
@@ -67,24 +70,18 @@ public class ReceiptActivity extends AppCompatActivity {
         return layout;
     }
 
-    private final TextView makeText(final String textString, final int count, int value) {
-        final TextView text = new TextView(this);
+    private final TextView makeText(final String text, int value) {
+        final TextView view = new TextView(this);
 
-        text.setTextColor(Color.parseColor("#009246"));
-        text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
+        view.setTextColor(Color.parseColor("#009246"));
+        view.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
+        view.setText(text);
 
-        if(count > 1) text.setText(textString + " (x" + count + ")");
-        else {
-            text.setTextColor(Color.BLACK);
-            text.setText(textString);
-        }
-
-        text.setGravity(Gravity.CENTER_VERTICAL);
-        text.setX(value / 2);
-        text.setWidth(value * 2);
-        text.setHeight(value);
-
-        return text;
+        view.setGravity(Gravity.CENTER_VERTICAL);
+        view.setX(value / 2);
+        view.setWidth(value * 2);
+        view.setHeight(value);
+        return view;
     }
 
     private final TextView makePrice(final String money, int value) {
