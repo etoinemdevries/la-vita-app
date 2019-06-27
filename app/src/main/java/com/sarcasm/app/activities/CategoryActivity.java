@@ -114,7 +114,7 @@ public final class CategoryActivity extends AppCompatActivity {
         plus.setMaxHeight(value);
 
         /* Set minus image specs */
-        minus.setImageResource(R.drawable.presence_busy);
+        minus.setImageResource(R.drawable.ic_input_minus);
         minus.setMinimumWidth(value);
         minus.setMinimumHeight(value);
         minus.setMaxWidth(value);
