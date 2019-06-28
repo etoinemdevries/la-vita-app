@@ -1,15 +1,29 @@
 <resources>
-    <string name="app_name">sarcasm-app</string>
+    <!-- Generic application strings -->
+    <string name="app_name">La Vita E Bella</string>
+    <string name="title_activity_category">Productoverzicht</string>
+    <string name="title_activity_login">Login Scherm</string>
+    <string name="title_activity_main">Hoofdmenu</string>
+    <string name="title_activity_receipt">Bonoverzicht</string>
+    <string name="title_activity_table">Tafeloverzicht</string>
+
+
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="password">Wachtwoord</string>
+    <string name="action_sign_in">Login</string>
+    <string name="logo">Bedrijf Logo</string>
+    <string name="error_incorrect_password">Verkeerd wachtwoord, probeer opnieuw</string>
+
+    <!-- Main menu -->
+    <string name="imgCat">Product categorie</string>
+    <string name="cat1">Pizza\'s</string>
+    <string name="cat2">Pasta</string>
+    <string name="cat3">Salades</string>
+    <string name="cat4">Desserts</string>
+    <string name="cat5">Frisdranken</string>
+    <string name="cat6">Alcohol</string>
+    <string name="cat7">Warme dranken</string>
+    <string name="cat8">Voorgerechten</string>
+    <string name="cat9">Hoofdgerechten</string>
+    <string name="cat10">Nagerechten</string>
 </resources>

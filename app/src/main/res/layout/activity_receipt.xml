@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".activities.ReceiptActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1e1e20"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="130dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/vita_logo"
+            android:contentDescription="TODO"
+            android:layout_marginStart="10dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="209dp"
+                android:layout_height="28dp"
+                android:background="#ffffff" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/productList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnNotition"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/black_button"
+        android:text="Beschrijving"
+        android:textColor="#fff"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/notition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/black_button"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Beschrijving"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:background="#fff"
+            android:paddingLeft="20dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:background="@drawable/black_button"
+                android:gravity="top"
+                android:paddingLeft="10dp"
+                android:text="sample text"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnCloseNotition"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/white_button"
+                android:text="OK" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+</LinearLayout>
