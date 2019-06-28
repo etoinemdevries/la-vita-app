@@ -31,8 +31,15 @@ public final class MainActivity extends AppCompatActivity {
         this.list = findViewById(R.id.categories);
         this.logo = findViewById(R.id.imgLogo);
 
-        /* Onclicklistener for logo (temporary) */
-        goToReceipt();
+        /* OnClick listener for logo (temporary)
+        this.logo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                final Intent intent = new Intent(MainActivity.this, ReceiptActivity.class);
+                startActivityForResult(intent, RESULT_OK);
+            }
+        });
+        */
 
         /* Checks for table number */
         final int result = getIntent().getIntExtra("table", -1);
@@ -47,6 +54,7 @@ public final class MainActivity extends AppCompatActivity {
             addCategory(c, point.x, point.y);
     }
 
+    /** Adds a category to this view */
     private final void addCategory(final Category c, final int width, final int height) {
         final LinearLayout layout = new LinearLayout(this);
         final ImageView img = new ImageView(this);
@@ -93,15 +101,5 @@ public final class MainActivity extends AppCompatActivity {
         layout.addView(img);
         layout.addView(text);
         this.list.addView(layout);
-    }
-
-    private final void goToReceipt() {
-        this.logo.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                final Intent intent = new Intent(MainActivity.this, ReceiptActivity.class);
-                startActivityForResult(intent, RESULT_OK);
-            }
-        });
     }
 }
