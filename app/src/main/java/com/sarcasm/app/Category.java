@@ -6,11 +6,11 @@ import java.util.ArrayList;
  * Product categories
  */
 public enum Category {
-    Alcohol("Alcohol", R.drawable.drinks),
     Appetizers("Voorgerechten", R.drawable.appetizer),
+    MainCourse("Hoofdgerechten", R.drawable.main_course),
     Dessert("Nagerechten", R.drawable.desserts),
     Drinks("Drinken", R.drawable.drinks),
-    MainCourse("Hoofdgerechten", R.drawable.main_course);
+    Alcohol("Alcohol", R.drawable.drinks);
 
     /* Category info */
     private final String name;

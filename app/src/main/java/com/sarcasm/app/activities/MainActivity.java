@@ -31,7 +31,6 @@ public final class MainActivity extends AppCompatActivity {
         this.list = findViewById(R.id.categories);
         this.logo = findViewById(R.id.imgLogo);
 
-        /* OnClick listener for logo (temporary)
         this.logo.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -39,7 +38,7 @@ public final class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, RESULT_OK);
             }
         });
-        */
+
 
         /* Checks for table number */
         final int result = getIntent().getIntExtra("table", -1);

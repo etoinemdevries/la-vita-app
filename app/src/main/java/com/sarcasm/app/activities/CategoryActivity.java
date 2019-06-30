@@ -110,15 +110,15 @@ public final class CategoryActivity extends AppCompatActivity {
         plus.setImageResource(R.drawable.ic_input_add);
         plus.setMinimumWidth(value);
         plus.setMinimumHeight(value);
-        plus.setMaxWidth(value);
-        plus.setMaxHeight(value);
+        //plus.setMaxWidth(value);
+        //plus.setMaxHeight(value);
 
         /* Set minus image specs */
         minus.setImageResource(R.drawable.ic_input_minus);
         minus.setMinimumWidth(value);
         minus.setMinimumHeight(value);
-        minus.setMaxWidth(value);
-        minus.setMaxHeight(value);
+        //minus.setMaxWidth(value);
+        //minus.setMaxHeight(value);
 
         /* Set amount specs */
         text.setText(Integer.toString(receipt.getAmount(p)));
@@ -144,7 +144,7 @@ public final class CategoryActivity extends AppCompatActivity {
 
         /* Add buttons and amount to action bar */
         actionBar.setGravity(Gravity.CENTER_VERTICAL);
-        actionBar.setOrientation(LinearLayout.VERTICAL);
+        actionBar.setOrientation(LinearLayout.HORIZONTAL);
         actionBar.addView(minus);
         actionBar.addView(text);
         actionBar.addView(plus);
