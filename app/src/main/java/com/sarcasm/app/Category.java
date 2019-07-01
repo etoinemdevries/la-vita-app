@@ -22,9 +22,9 @@ public enum Category {
     public enum Product {
         Heineken("Heineken", 1.20, -1, Category.Alcohol), WhiteWine("Witte wijn", 0.50, -1, Category.Alcohol), RedWine("Rode wijn", 2.80, -1, Category.Alcohol),
         Baguette("Stokbrood", 1, -1, Category.Appetizers), Soup("Soep", 99, -1, Category.Appetizers),
-        RocketIce("Raket ijsje", 42, -1, Category.Dessert), TreasureChest("Schatkist ijsje met speeltje", 11.50, -1, Category.Dessert), Flippo("Flippo", 1.40, -1, Category.Dessert), Softice("Softijsje met sprinkels", 2.50, -1, Category.Dessert), Cake("Taart met kaarsjes voor de jarige", 0.50, -1, Category.Dessert),
+        RocketIce("Bananasplit", 42, -1, Category.Dessert), TreasureChest("Sorbet", 11.50, -1, Category.Dessert), Flippo("Dame Blanche", 1.40, -1, Category.Dessert), Softice("Softijsje met sprinkels", 2.50, -1, Category.Dessert), Cake("Appelgebak", 0.50, -1, Category.Dessert),
         Water("Water", Integer.MAX_VALUE, -1, Category.Drinks), Yogi("Yogi drink", 2, -1, Category.Drinks), OrangeJuice("Sinaasappelsap", 1.2, -1, Category.Drinks),
-        Fries("Patat", 1.45, -1, Category.MainCourse), Hutspot("Hutspot", 0.69, -1, Category.MainCourse), Stroopwafels("Stroopwafels", 5.40, -1, Category.MainCourse), Toast("Tosti", 1.40, -1, Category.MainCourse), BabiPangang("Babi pangang", 20, -1, Category.MainCourse);
+        Fries("Pizza Salame", 1.45, -1, Category.MainCourse), Hutspot("Pizza Hawaii", 0.69, -1, Category.MainCourse), Stroopwafels("Pizza Kebab", 5.40, -1, Category.MainCourse), Toast("Pizza Tonno", 1.40, -1, Category.MainCourse), BabiPangang("Pizza BBQ", 20, -1, Category.MainCourse);
 
         /* Product info */
         private final String name;
