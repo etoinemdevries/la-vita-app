@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.nio.charset.Charset;
 
 public final class Connection {
     private final Socket socket;
@@ -15,11 +16,12 @@ public final class Connection {
 
     public Connection(final String ip, final int port){
         try{
-            final InetAddress address = InetAddress.getByAddress(ip.getBytes());
+            final InetAddress address = InetAddress.getByName(ip);
             this.socket = new Socket(address, port);
 
             System.out.printf("Connected to %s:%d", ip, port);
         }catch(final IOException e){
+            e.printStackTrace();
             throw new IllegalArgumentException("Invalid ip: " + ip);
         }
     }

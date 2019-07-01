@@ -13,11 +13,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sarcasm.app.R;
+import com.sarcasm.app.utils.Connection;
 
 public final class LoginActivity extends AppCompatActivity implements OnClickListener {
     private TextView password;
     private ImageView logo;
     private Button login;
+
+    public LoginActivity(){
+        new Thread(new Runnable() {
+            @Override
+            public final void run() {
+                Connection connection = new Connection("172.20.10.7", 1337);
+                connection.write("Hallo");
+                connection.disconnect();
+            }
+        }).start();
+    }
 
     @Override
     protected final void onCreate(final @Nullable Bundle bundle) {
